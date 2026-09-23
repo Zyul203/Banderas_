@@ -13,7 +13,6 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -33,7 +32,7 @@ class MainActivity: ComponentActivity()
         enableEdgeToEdge()
         setContent {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    BanderaMexico(modifier = Modifier.padding(innerPadding),)
+                    BanderaMexico(modifier = Modifier.padding(innerPadding))
                 }
             }
         }
@@ -75,6 +74,7 @@ fun BanderaMexico(modifier: Modifier = Modifier)
 
 @Preview(showBackground = true)
 @Composable
-fun BanderaPreview() {
+fun BanderaPreview()
+{
     BanderaMexico()
 }
