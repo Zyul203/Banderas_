@@ -7,4 +7,8 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="rojo_espana">#FFAA151B</color>
+    <color name="amarillo_espana">#FFF1BF00</color>
+
+
 </resources>
