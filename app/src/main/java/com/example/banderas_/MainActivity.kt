@@ -45,7 +45,7 @@ fun BanderaEspana(modifier: Modifier = Modifier)
             Image(
                 painter = painterResource(id = R.drawable.escudo_espana),
                 contentDescription = "Escudo nacional",
-                modifier = Modifier.size(150.dp).rotate(270f).offset(x = (-180).dp, y = (-10).dp) //RECOMENDADO: Si es negativo poner entre parentesis
+                modifier = Modifier.size(150.dp).rotate(270f).offset(x = (-180).dp, y = (-10).dp) //RECOMENDADO: Si es negativo poner entre parentesis.
             )
         }
         Box(Modifier.weight(1f).fillMaxHeight().background(colorResource(id = R.color.rojo_espana)))
