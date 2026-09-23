@@ -4,14 +4,16 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.*
 import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Text
+import androidx.compose.material3.Surface
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.tooling.preview.Preview
-import com.example.banderas_.ui.theme.Banderas_Theme
+
 
 class MainActivity: ComponentActivity()
 {
@@ -21,20 +23,42 @@ class MainActivity: ComponentActivity()
         enableEdgeToEdge()
         setContent {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Bandera(modifier = Modifier.padding(innerPadding),)
+                    BanderaItalia(modifier = Modifier.padding(innerPadding))
                 }
-            }
         }
     }
-
-fun Bandera(modifier: Modifier = Modifier)
-{
 }
 
-
-
-@Preview(showBackground = true)
 @Composable
-fun BanderaPreview() {
-    Bandera()
+fun BanderaItalia(modifier: Modifier = Modifier)
+{
+    Column (modifier = modifier.fillMaxSize())
+    {
+        Box(
+            modifier = Modifier
+                .weight(1f)
+                .fillMaxWidth()
+                .background(colorResource(id = R.color.verde_Italia))
+        )
+        Box(
+            modifier = Modifier
+                .weight(1f)
+                .fillMaxWidth()
+                .background(Color.White)
+        )
+        Box(
+            modifier = Modifier
+                .weight(1f)
+                .fillMaxWidth()
+                .background(Color.Red)
+        )
+    }
+}
+
+@Preview(showBackground = true, showSystemUi = true)
+@Composable
+fun BanderaItaliaPreview() {
+    Surface {
+        BanderaItalia()
+    }
 }
