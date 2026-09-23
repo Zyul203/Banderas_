@@ -38,7 +38,7 @@ fun BanderaItalia(modifier: Modifier = Modifier)
             modifier = Modifier
                 .weight(1f)
                 .fillMaxWidth()
-                .background(colorResource(id = R.color.verde_Italia))
+                .background(Color.Red)
         )
         Box(
             modifier = Modifier
@@ -50,7 +50,7 @@ fun BanderaItalia(modifier: Modifier = Modifier)
             modifier = Modifier
                 .weight(1f)
                 .fillMaxWidth()
-                .background(Color.Red)
+                .background(colorResource(id = R.color.verde_Italia))
         )
     }
 }
