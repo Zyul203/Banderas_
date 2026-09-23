@@ -1,17 +1,22 @@
 package com.example.banderas_
 
 import android.os.Bundle
+import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.*
+import androidx.compose.ui.res.colorResource
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
-import com.example.banderas_.ui.theme.Banderas_Theme
+
 
 class MainActivity: ComponentActivity()
 {
@@ -21,20 +26,39 @@ class MainActivity: ComponentActivity()
         enableEdgeToEdge()
         setContent {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Bandera(modifier = Modifier.padding(innerPadding),)
+                    BanderaFrancia(modifier = Modifier.padding(innerPadding))
                 }
             }
         }
     }
 
-fun Bandera(modifier: Modifier = Modifier)
+@Composable
+fun BanderaFrancia(modifier: Modifier = Modifier)
 {
+    Row (modifier = modifier.fillMaxSize()) {
+        Box(
+            modifier = Modifier
+                .weight(1f)
+                .fillMaxHeight()
+                .background(colorResource(id = R.color.azul_francia))
+        )
+        Box(
+            modifier = Modifier
+                .weight(1f)
+                .fillMaxHeight()
+                .background(Color.White),
+        )
+        Box(
+            modifier = Modifier
+                .weight(1f)
+                .fillMaxHeight()
+                .background(Color(0xFFEF4135))
+        )
+    }
 }
 
-
-
-@Preview(showBackground = true)
+@Preview(showBackground = true, showSystemUi = true) //El showSystemUi sirve para renderizar la pantalla del celular (Iconos superiores)
 @Composable
-fun BanderaPreview() {
-    Bandera()
+fun BanderaFranciaPreview() {
+        BanderaFrancia()
 }
