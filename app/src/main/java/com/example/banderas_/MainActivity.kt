@@ -4,14 +4,17 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.*
 import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Text
+import androidx.compose.material3.Surface
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.tooling.preview.Preview
-import com.example.banderas_.ui.theme.Banderas_Theme
+import androidx.compose.ui.res.colorResource
+
 
 class MainActivity: ComponentActivity()
 {
@@ -21,20 +24,43 @@ class MainActivity: ComponentActivity()
         enableEdgeToEdge()
         setContent {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Bandera(modifier = Modifier.padding(innerPadding),)
+                    BanderaAlemania(modifier = Modifier.padding(innerPadding))
                 }
             }
         }
     }
 
-fun Bandera(modifier: Modifier = Modifier)
+
+@Composable
+fun BanderaAlemania(modifier: Modifier = Modifier)
 {
+    Row (modifier = modifier.fillMaxSize())
+    {
+        Box(
+            modifier = Modifier
+                .weight(1f)
+                .fillMaxHeight() //Width por es Ancho
+                .background(Color.Black)
+        )
+        Box(
+            modifier = Modifier
+                .weight(1f)
+                .fillMaxHeight()
+                .background(colorResource(id = R.color.rojo_alemania))
+        )
+        Box(
+            modifier = Modifier
+                .weight(1f)
+                .fillMaxHeight()
+                .background(colorResource(id = R.color.amarillo_alemania))
+        )
+    }
 }
-
-
 
 @Preview(showBackground = true)
 @Composable
-fun BanderaPreview() {
-    Bandera()
+fun BanderaAlemaniaPreview() {
+    Surface {
+        BanderaAlemania()
+    }
 }
