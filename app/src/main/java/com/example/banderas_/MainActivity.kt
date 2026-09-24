@@ -1,5 +1,6 @@
 package com.example.banderas_
 
+import Screen.BanderaItalia
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -29,31 +30,7 @@ class MainActivity: ComponentActivity()
     }
 }
 
-@Composable
-fun BanderaItalia(modifier: Modifier = Modifier)
-{
-    Column (modifier = modifier.fillMaxSize())
-    {
-        Box(
-            modifier = Modifier
-                .weight(1f)
-                .fillMaxWidth()
-                .background(Color.Red)
-        )
-        Box(
-            modifier = Modifier
-                .weight(1f)
-                .fillMaxWidth()
-                .background(Color.White)
-        )
-        Box(
-            modifier = Modifier
-                .weight(1f)
-                .fillMaxWidth()
-                .background(colorResource(id = R.color.verde_Italia))
-        )
-    }
-}
+
 
 @Preview(showBackground = true, showSystemUi = true)
 @Composable
